@@ -1,6 +1,7 @@
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -20,6 +21,7 @@ public class SandBuggyLiteTest {
 	}
 
 	@Test
+    @Ignore
 	public void turningLeftTurnsAllWheels() {
 		int degrees = TestHelpers.randomDegrees();
 		buggy.turnLeft(degrees);
@@ -30,6 +32,7 @@ public class SandBuggyLiteTest {
 	}
 
 	@Test
+    @Ignore
 	public void turningRightTurnsAllWheels() {
 		int degrees = TestHelpers.randomDegrees();
 		buggy.turnRight(degrees);

@@ -1,19 +1,29 @@
-abstract class Car {
+class Car {
 
 	public Wheel _frontLeft;
 	public Wheel _frontRight;
 	public Wheel _rearLeft;
 	public Wheel _rearRight;
+    private String name;
 
-	public abstract String name();
-	public abstract void accelerate(int kmsPerHour);
+    Drive drive;
 
-	protected Car() {
-		_frontLeft = new Wheel("front left");
+	public String name() {
+        return name;
+    }
+
+    public void accelerate(int kph) {
+        drive.accelerate(kph, _frontLeft, _frontRight, _rearLeft, _rearRight);
+    }
+
+	protected Car(String name, Drive drive) {
+        this.name = name;
+        _frontLeft = new Wheel("front left");
 		_frontRight = new Wheel("front right");
 		_rearLeft = new Wheel("rear left");
 		_rearRight = new Wheel("rear right");
-	}
+        this.drive = drive;
+  	}
 
 	public void turnLeft(int degrees) {
 		_frontLeft.turnLeft(degrees);
