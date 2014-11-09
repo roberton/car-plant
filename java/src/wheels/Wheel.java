@@ -1,6 +1,8 @@
+package wheels;
+
+import cars.CarPlant;
 
 public class Wheel {
-
 	private String name;
 
 	public Wheel(String name) {
@@ -18,5 +20,4 @@ public class Wheel {
 	public void rotate(int kph) {
 		CarPlant.LOG += name + " accelerating " + kph + " kph\n";
 	}
-
 }
