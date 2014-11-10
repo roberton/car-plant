@@ -12,5 +12,6 @@ public interface Car {
 
     void turnRight(int degrees);
 
+    // TODO: would be nice to get rid of this as it is only here for the decorators, not the clients
     WheelSet wheels();
 }
