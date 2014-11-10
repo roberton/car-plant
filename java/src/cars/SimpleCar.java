@@ -4,7 +4,7 @@ import wheels.WheelSet;
 
 public class SimpleCar implements Car {
     private String name = "";
-    public WheelSet wheels;
+    private WheelSet wheels;
 
     public SimpleCar(String name, WheelSet wheels) {
         this.name = name;

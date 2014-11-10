@@ -3,10 +3,6 @@ package cars;
 import decorators.FourWheelDriveDecorator;
 import decorators.FourWheelSteeringDecorator;
 import decorators.RearWheelDriveDecorator;
-import drive.FourWheelDrive;
-import drive.RearWheelDrive;
-import steering.FourWheelSteering;
-import steering.FrontWheelSteering;
 import wheels.WheelSet;
 
 public class CarPlant {

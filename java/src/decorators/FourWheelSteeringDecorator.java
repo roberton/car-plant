@@ -3,11 +3,9 @@ package decorators;
 import cars.Car;
 import wheels.WheelSet;
 
-public class FourWheelSteeringDecorator implements Car {
-    final private Car car;
-
+public class FourWheelSteeringDecorator extends CarDecorator {
     public FourWheelSteeringDecorator(Car car) {
-        this.car = car;
+        super(car);
     }
 
     @Override

@@ -4,11 +4,9 @@ import cars.Car;
 import cars.SimpleCar;
 import wheels.WheelSet;
 
-public class RearWheelDriveDecorator implements Car {
-    private Car car;
-
+public class RearWheelDriveDecorator extends CarDecorator {
     public RearWheelDriveDecorator(Car car) {
-        this.car = car;
+        super(car);
     }
 
     @Override

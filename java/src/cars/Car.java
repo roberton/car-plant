@@ -1,7 +1,7 @@
 package cars;
 
-import wheels.WheelSet;
 
+import wheels.WheelSet;
 
 public interface Car {
     String name();

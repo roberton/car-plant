@@ -4,11 +4,9 @@ import cars.Car;
 import cars.SimpleCar;
 import wheels.WheelSet;
 
-public class FourWheelDriveDecorator implements Car {
-    private final SimpleCar car;
-
-    public FourWheelDriveDecorator(SimpleCar car) {
-        this.car = car;
+public class FourWheelDriveDecorator extends CarDecorator {
+    public FourWheelDriveDecorator(Car car) {
+        super(car);
     }
 
     @Override
@@ -18,10 +16,10 @@ public class FourWheelDriveDecorator implements Car {
 
     @Override
     public void accelerate(int kmsPerHour) {
-        this.car.wheels.frontLeft.rotate(kmsPerHour);
-        this.car.wheels.frontRight.rotate(kmsPerHour);
-        this.car.wheels.rearLeft.rotate(kmsPerHour);
-        this.car.wheels.rearRight.rotate(kmsPerHour);
+        this.car.wheels().frontLeft.rotate(kmsPerHour);
+        this.car.wheels().frontRight.rotate(kmsPerHour);
+        this.car.wheels().rearLeft.rotate(kmsPerHour);
+        this.car.wheels().rearRight.rotate(kmsPerHour);
     }
 
     @Override

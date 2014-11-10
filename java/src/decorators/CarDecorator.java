@@ -1,8 +1,12 @@
 package decorators;
 
-public interface CarDecorator {
-    public String name();
-    public void accelerate(int kmsPerHour);
-    public void turnLeft(int degrees);
-    public void turnRight(int degrees);
+import cars.Car;
+
+
+abstract public class CarDecorator implements Car {
+    protected Car car;
+
+    public CarDecorator(Car car) {
+        this.car = car;
+    }
 }
