@@ -1,32 +1,16 @@
 package cars;
 
-import drive.Drive;
-import steering.Steering;
+import wheels.WheelSet;
 
-public class Car {
-    private String _name = "";
-    private Steering _steering;
-    private Drive _drive;
 
-    public Car(String name, Steering steering, Drive drive) {
-        this._name = name;
-        this._steering = steering;
-        this._drive = drive;
-    }
+public interface Car {
+    String name();
 
-	public String name() {
-        return _name;
-    }
+    void accelerate(int kmsPerHour);
 
-	public void accelerate(int kmsPerHour) {
-        _drive.accelerate(kmsPerHour);
-    }
+    void turnLeft(int degrees);
 
-	public void turnLeft(int degrees) {
-        _steering.turnLeft(degrees);
-	}
+    void turnRight(int degrees);
 
-	public void turnRight(int degrees) {
-        _steering.turnRight(degrees);
-	}
+    WheelSet wheels();
 }

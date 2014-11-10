@@ -1,7 +1,9 @@
 package cars;
 
+import decorators.FourWheelDriveDecorator;
+import decorators.FourWheelSteeringDecorator;
+import decorators.RearWheelDriveDecorator;
 import drive.FourWheelDrive;
-import drive.FrontWheelDrive;
 import drive.RearWheelDrive;
 import steering.FourWheelSteering;
 import steering.FrontWheelSteering;
@@ -12,26 +14,26 @@ public class CarPlant {
 
 	public static Car makeToyotaCorolla() {
         WheelSet wheels = new WheelSet();
-        return new Car("Toyota Corolla", new FrontWheelSteering(wheels), new FrontWheelDrive(wheels));
+        return new SimpleCar("Toyota Corolla", wheels);
 	}
 
 	public static Car makeToyotaCorollaSports() {
         WheelSet wheels = new WheelSet();
-        return new Car("Toyota Corolla sports", new FrontWheelSteering(wheels), new RearWheelDrive(wheels));
+        return new RearWheelDriveDecorator(new SimpleCar("Toyota Corolla sports", wheels));
 	}
 
 	public static Car makeMitsubishiTriton() {
         WheelSet wheels = new WheelSet();
-		return new Car("Mitsubishi Triton", new FrontWheelSteering(wheels), new FourWheelDrive(wheels));
+		return new FourWheelDriveDecorator(new SimpleCar("Mitsubishi Triton", wheels));
 	}
 
 	public static Car makeSandBuggy() {
         WheelSet wheels = new WheelSet();
-        return new Car("Sand Buggy", new FourWheelSteering(wheels), new FourWheelDrive(wheels));
+        return new FourWheelSteeringDecorator(new FourWheelDriveDecorator(new SimpleCar("Sand Buggy", wheels)));
 	}
 
 	public static Car makeSandBuggyLite() {
         WheelSet wheels = new WheelSet();
-		return new Car("Sand Buggy Lite", new FourWheelSteering(wheels), new RearWheelDrive(wheels));
+		return new RearWheelDriveDecorator(new FourWheelSteeringDecorator(new SimpleCar("Sand Buggy Lite", wheels)));
 	}
 }

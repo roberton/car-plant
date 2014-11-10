@@ -1,10 +1,12 @@
 import static org.junit.Assert.*;
 
+import cars.Car;
+import cars.CompositeCar;
+import cars.CarPlant;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ToyotaCorollaTest {
-
 	private Car corolla;
 
 	@Before

@@ -1,11 +1,13 @@
 import static org.junit.Assert.assertEquals;
 
+import cars.Car;
+import cars.CompositeCar;
+import cars.CarPlant;
 import org.junit.Before;
 import org.junit.Test;
 
 
 public class ToyotaCorollaSportsTest {
-
 	private Car corolla;
 
 	@Before
